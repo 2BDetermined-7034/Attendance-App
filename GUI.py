@@ -10,11 +10,16 @@ from kivy.uix.dropdown import DropDown
 from kivy.uix.button import Button
 from kivy.base import runTouchApp
 
-from database.sqlite import get_student_by_name
+from database.sqlite import signin
+from database.sqlite import signin_by_name
+from database.sqlite import get_student
 
 class Gui(GridLayout):
 
     def __init__(self, **kwargs):
+
+        get_student()
+        
         super(Gui, self).__init__(**kwargs)
         self.cols = 2
         self.add_widget(Label(text='Fisrt Name + Last Initial (EX: Bart S.)'))
@@ -34,7 +39,7 @@ class Gui(GridLayout):
         #self.Logout.bind(on_press=get_student_by_name(self.name.text))
 
     def handle_login(self, button_object):
-        get_student_by_name(self.name.text)
+        signin_by_name(self.name.text)
 
 class MyApp(App):
 
