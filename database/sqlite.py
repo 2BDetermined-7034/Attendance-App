@@ -46,7 +46,27 @@ def signout(ID):
 
 def get_student_by_name(name):
     c.execute("SELECT * FROM student WHERE name =:name ",{'name':name})
-    return c.fetchall()
+    return  c.fetchall()
+    
+
+def get_ID_by_name(name):
+    c.execute("SELECT ID FROM student WHERE name =:name ",{'name':name})
+    number = c.fetchone()
+    return number[0]
+
+def signin_by_name(name):
+    c.execute("SELECT ID FROM student WHERE name =:name ",{'name':name})
+    number = c.fetchone()
+    signin(number[0])
+
+
+
+def signout_by_name(name):
+    c.execute("SELECT ID FROM student WHERE name =:name ",{'name':name})
+    number = c.fetchone()
+    signout(number[0])
+
+
 
 def get_time_by_date(date):
     c.execute("SELECT * FROM time WHERE date =:date ",{'date':date})
@@ -62,5 +82,9 @@ def get_time():
 sonan = Student(1,'sonan gudina',0)
 insert_student(sonan)
 print(get_student())
+print(get_ID_by_name("sonan gudina"))
+signin(get_ID_by_name("sonan gudina"))
+signout(get_ID_by_name("sonan gudina"))
+signin_by_name("sonan gudina")
 conn.close
 
