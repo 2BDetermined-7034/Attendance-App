@@ -3,9 +3,7 @@ kivy.require('2.3.0')
 
 from kivy.core.window import Window
 
-print("Hello World!")
+from GUI import MyApp
 
-from GUI import Gui
-
-Gui().run()
+MyApp().run()
 Window.close()
