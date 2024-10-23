@@ -35,7 +35,6 @@ class Gui(GridLayout):
 
     def handle_login(self, button_object):
         get_student_by_name(self.name.text)
-        print(self.name.text)
 
 class MyApp(App):
 
