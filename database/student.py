@@ -4,3 +4,5 @@ class Student:
         self.ID = ID
         self.name = name
         self.ishere = ishere
+
+        print(self.ID, self.name, self.ishere)

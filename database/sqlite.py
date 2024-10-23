@@ -1,5 +1,5 @@
 import sqlite3
-from student import Student
+from database.student import Student
 from datetime import datetime
 
 current_time = datetime.now()
